@@ -1,0 +1,36 @@
+.breadcrumb {
+  padding-left: 0;
+}
+
+ol {
+  &.breadcrumb {
+    background: none;
+  }
+
+  .breadcrumb-item {
+    font-size: 1.4rem;
+    color: $color-black-light;
+
+    + .breadcrumb-item {
+      &::before {
+        display: none;
+      }
+    }
+
+    &:not(:last-child) {
+      &::after {
+        content: $icon-nav-item-active-arrow-right;
+        padding-left: 8px;
+        padding-right: 1rem;
+        position: relative;
+        font-family: $font-icon;
+        font-size: 9px;
+      }
+    }
+
+    &:hover,
+    &.active {
+      color: $color-black;
+    }
+  }
+}
