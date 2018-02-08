@@ -246,9 +246,9 @@
 						
                         <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="fa fa fa-user-circle-o"></i><span class="hide-menu">Gestion des comptes</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="app-calendar.html">Etudiants</a></li>
-                                <li><a href="app-chat.html">Professeurs</a></li>
-                                <li><a href="app-ticket.html">Administrateurs</a></li>
+                                <li><a href="gestion-etudiants.php">Etudiants/Elèves</a></li>
+                                <li><a href="gestion-profs.php">Professeurs</a></li>
+                                <li><a href="gestion-admins.php">Administrateurs</a></li>
                             </ul>
                         </li>
                         <li> <a class="waves-effect" href="#" aria-expanded="false"><i class="fa fa-calendar"></i>Gestion des emplois </a>  </li>	
