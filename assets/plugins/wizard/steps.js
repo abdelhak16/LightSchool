@@ -4,7 +4,7 @@ $(".tab-wizard").steps({
     transitionEffect: "fade",
     titleTemplate: '<span class="step">#index#</span> #title#',
     labels: {
-        finish: "Submit"
+        finish: "Valider"
     }, 
     onFinished: function (event, currentIndex) {
         var form = $(this);
@@ -22,16 +22,16 @@ $(".validation-wizard").steps({
     , transitionEffect: "fade"
     , titleTemplate: '<span class="step">#index#</span> #title#'
     , labels: {
-        finish: "Submit"
+        finish: "Valider"
     }
     , onStepChanging: function (event, currentIndex, newIndex) {
         return currentIndex > newIndex || !(3 === newIndex && Number($("#age-2").val()) < 18) && (currentIndex < newIndex && (form.find(".body:eq(" + newIndex + ") label.error").remove(), form.find(".body:eq(" + newIndex + ") .error").removeClass("error")), form.validate().settings.ignore = ":disabled,:hidden", form.valid())
     }
-    , onFinishing: function (event, currentIndex) {
-        return form.validate().settings.ignore = ":disabled", form.valid()
+    , onFinishing: function (event, currentIndex, newIndex) {
+         return currentIndex > newIndex || !(3 === newIndex && Number($("#age-2").val()) < 18) && (currentIndex < newIndex && (form.find(".body:eq(" + newIndex + ") label.error").remove(), form.find(".body:eq(" + newIndex + ") .error").removeClass("error")), form.validate().settings.ignore = ":disabled,:hidden", form.valid())
     }
     , onFinished: function (event, currentIndex) {
-         swal("Form Submitted!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lorem erat eleifend ex semper, lobortis purus sed.");
+                 form.submit();   
     }
 }), $(".validation-wizard").validate({
     ignore: "input[type=hidden]"

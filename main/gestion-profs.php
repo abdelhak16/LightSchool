@@ -3,8 +3,8 @@
 
 include_once("includes/connexion.php");
 
-$req_etus='SELECT * FROM `etudiant`';
-$cmd_etuds=mysql_query($req_etus);
+$req_profs='SELECT * FROM `prof`';
+$cmd_profs=mysql_query($req_profs);
 
 ?>
 <html lang="en">
@@ -21,8 +21,6 @@ $cmd_etuds=mysql_query($req_etus);
     <title>LightSchool</title>
     <!-- Bootstrap Core CSS -->
     <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- morris CSS -->
-    <link href="../assets/plugins/morrisjs/morris.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->
@@ -35,7 +33,7 @@ $cmd_etuds=mysql_query($req_etus);
 <![endif]-->
 </head>
 
-<body class="fix-header fix-sidebar card-no-border">
+<body class="fix-header card-no-border">
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
@@ -183,7 +181,96 @@ $cmd_etuds=mysql_query($req_etus);
                         <!-- ============================================================== -->
                         <!-- Messages -->
                         <!-- ============================================================== -->
-      
+                        <li class="nav-item dropdown mega-dropdown"> <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="mdi mdi-view-grid"></i></a>
+                            <div class="dropdown-menu animated slideInUp">
+                                <ul class="mega-dropdown-menu row">
+                                    <li class="col-lg-3 col-xlg-2 m-b-30">
+                                        <h4 class="m-b-20">CAROUSEL</h4>
+                                        <!-- CAROUSEL -->
+                                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                            <div class="carousel-inner" role="listbox">
+                                                <div class="carousel-item active">
+                                                    <div class="container"> <img class="d-block img-fluid" src="../assets/images/big/img1.jpg" alt="First slide"></div>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <div class="container"><img class="d-block img-fluid" src="../assets/images/big/img2.jpg" alt="Second slide"></div>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <div class="container"><img class="d-block img-fluid" src="../assets/images/big/img3.jpg" alt="Third slide"></div>
+                                                </div>
+                                            </div>
+                                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a>
+                                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
+                                        </div>
+                                        <!-- End CAROUSEL -->
+                                    </li>
+                                    <li class="col-lg-3 m-b-30">
+                                        <h4 class="m-b-20">ACCORDION</h4>
+                                        <!-- Accordian -->
+                                        <div id="accordion" class="nav-accordion" role="tablist" aria-multiselectable="true">
+                                            <div class="card">
+                                                <div class="card-header" role="tab" id="headingOne">
+                                                    <h5 class="mb-0">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                  Collapsible Group Item #1
+                                                </a>
+                                              </h5> </div>
+                                                <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                                                    <div class="card-body"> Anim pariatur cliche reprehenderit, enim eiusmod high. </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header" role="tab" id="headingTwo">
+                                                    <h5 class="mb-0">
+                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                  Collapsible Group Item #2
+                                                </a>
+                                              </h5> </div>
+                                                <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                                    <div class="card-body"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header" role="tab" id="headingThree">
+                                                    <h5 class="mb-0">
+                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                  Collapsible Group Item #3
+                                                </a>
+                                              </h5> </div>
+                                                <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                                                    <div class="card-body"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="col-lg-3  m-b-30">
+                                        <h4 class="m-b-20">CONTACT US</h4>
+                                        <!-- Contact -->
+                                        <form>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="exampleInputname1" placeholder="Enter Name"> </div>
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" placeholder="Enter email"> </div>
+                                            <div class="form-group">
+                                                <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Message"></textarea>
+                                            </div>
+                                            <button type="submit" class="btn btn-info">Submit</button>
+                                        </form>
+                                    </li>
+                                    <li class="col-lg-3 col-xlg-4 m-b-30">
+                                        <h4 class="m-b-20">List style</h4>
+                                        <!-- List style -->
+                                        <ul class="list-style-none">
+                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> You can give link</a></li>
+                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> Give link</a></li>
+                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> Another Give link</a></li>
+                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> Forth link</a></li>
+                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> Another fifth link</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
                         <!-- ============================================================== -->
                         <!-- End Messages -->
                         <!-- ============================================================== -->
@@ -195,13 +282,18 @@ $cmd_etuds=mysql_query($req_etus);
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
+                        <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
+                            <form class="app-search">
+                                <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
+                        </li>
                         
                         <!-- ============================================================== -->
                         <!-- Language -->
                         <!-- ============================================================== -->
-                        <li><br/>
-                            <h4 style='color:white;'>Steave Jobs</h4>
-						</li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="flag-icon flag-icon-us"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right scale-up"> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-in"></i> India</a> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-fr"></i> French</a> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-cn"></i> China</a> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-de"></i> Dutch</a> </div>
+                        </li>
                         <!-- ============================================================== -->
                         <!-- Profile -->
                         <!-- ============================================================== -->
@@ -218,13 +310,13 @@ $cmd_etuds=mysql_query($req_etus);
                                         </div>
                                     </li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="#"><i class="ti-user"></i> Mon Profil</a></li>
+                                    <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
                                     <li><a href="#"><i class="ti-wallet"></i> My Balance</a></li>
                                     <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
                                     <li role="separator" class="divider"></li>
                                     <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="#"><i class="fa fa-power-off"></i> Deconnexion</a></li>
+                                    <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -242,14 +334,10 @@ $cmd_etuds=mysql_query($req_etus);
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar">
                 <!-- User profile -->
-					
+                
                 <!-- End User profile text-->
                 <!-- Sidebar navigation-->
-				<?php  include_once("includes/menu.php"); ?>
-                <!-- End Sidebar navigation -->
-            </div>
-            <!-- End Sidebar scroll-->
-        </aside>
+                <?php  include_once("includes/menu.php"); ?>
                 <!-- End Sidebar navigation -->
             </div>
             <!-- End Sidebar scroll-->
@@ -266,13 +354,12 @@ $cmd_etuds=mysql_query($req_etus);
             <!-- ============================================================== -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-themecolor">Liste des Etudiants/Elèves</h3>
+                    <h3 class="text-themecolor">Liste des Professeurs</h3>
                 </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Gestion des comptes</a></li>
-                        <li class="breadcrumb-item">Etudiants/Elèves</li>
-                        
+                       <li class="breadcrumb-item">Gestion des comptes</li>
+                        <li class="breadcrumb-item">Professeurs</li>
                     </ol>
                 </div>
                 <div class="">
@@ -286,200 +373,65 @@ $cmd_etuds=mysql_query($req_etus);
             <!-- Container fluid  -->
             <!-- ============================================================== -->
             <div class="container-fluid">
+                
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
+                <!-- .row -->
+				<a href="ajouter-prof.php"class="btn btn-info text-white">+ Nouveau Professeur </a><br/><br/>
                 <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <!-- .left-right-aside-column-->
-                            <div class="contact-page-aside">
-                                <!-- .left-aside-column-->
-                                <div class="left-aside bg-light-part">
-                                    <ul class="list-style-none">
-                                        <li class="box-label"><a href="javascript:void(0)">Total Resultat <span>1500</span></a></li>
-                                        <li class="divider"></li>
-                                        <li class="box-label"><a href="javascript:void(0)" data-toggle="modal" data-target="#myModal" >Cycle <span>3</span></a></li>
-                                        <li class="box-label"><a href="javascript:void(0)" data-toggle="modal" data-target="#myModal2" >Niveau <span>19</span></a></li>
-                                        <li class="box-label"><a href="javascript:void(0)" data-toggle="modal" data-target="#myModal3" >Classe <span>100</span></a></li>
-                                        <br/>
-                                        <li class="box-label"><a href="ajouter-etudiant.php"class="btn btn-info text-white">+ Ajouter Etudiants/Elèves </a></li>
-                                        <div id="myModal" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h4 class="modal-title" id="myModalLabel">Filtrer par Cycle</h4>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <from class="form-horizontal">
-                                                            
-                                                            <div class="form-group">
-                                                                <label class="col-md-12">Selection la cycle</label>
-                                                                <div class="col-md-12">
-                                                                    <select class="form-control">
-                                                                        <option>Toutes</option>
-                                                                        <option>10</option>
-                                                                        <option>20</option>
-                                                                        <option>30</option>
-                                                                        <option>40</option>
-                                                                        <option>Custome</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                        </from>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-info waves-effect" data-dismiss="modal">Filtrer</button>
-                                                        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Annuler</button>
-                                                    </div>
-                                                </div>
-                                                <!-- /.modal-content -->
-                                            </div>
-                                            <!-- /.modal-dialog -->
-                                        </div>
-										<div id="myModal2" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h4 class="modal-title" id="myModalLabel">Filtrer par Niveau</h4>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <from class="form-horizontal">
-                                                            
-                                                            <div class="form-group">
-                                                                <label class="col-md-12">Selection le niveau</label>
-                                                                <div class="col-md-12">
-                                                                    <select class="form-control">
-                                                                        <option>All Contacts</option>
-                                                                        <option>10</option>
-                                                                        <option>20</option>
-                                                                        <option>30</option>
-                                                                        <option>40</option>
-                                                                        <option>Custome</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                        </from>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-info waves-effect" data-dismiss="modal">Filtrer</button>
-                                                        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Annuler</button>
-                                                    </div>
-                                                </div>
-                                                <!-- /.modal-content -->
-                                            </div>
-                                            <!-- /.modal-dialog -->
-                                        </div>
-										<div id="myModal3" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h4 class="modal-title" id="myModalLabel">Filtrer par Classe</h4>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <from class="form-horizontal">
-                                                            
-                                                            <div class="form-group">
-                                                                <label class="col-md-12">Selection la classe</label>
-                                                                <div class="col-md-12">
-                                                                    <select class="form-control">
-                                                                        <option>All Contacts</option>
-                                                                        <option>10</option>
-                                                                        <option>20</option>
-                                                                        <option>30</option>
-                                                                        <option>40</option>
-                                                                        <option>Custome</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                        </from>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-info waves-effect" data-dismiss="modal">Filtrer</button>
-                                                        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Annuler</button>
-                                                    </div>
-                                                </div>
-                                                <!-- /.modal-content -->
-                                            </div>
-                                            <!-- /.modal-dialog -->
-                                        </div>
-                                    </ul>
+				<?php 
+						while ( $data = mysql_fetch_assoc($cmd_profs) )
+						{
+
+
+							$nom=$data['nom'].' '.$data['prenom'];							
+							$genre=$data['genre'];
+							$adresse=$data['adresse'];
+							$tel=$data['tel'];
+							$email=$data['email'];
+							$date_naissance=$data['date_naissance'];
+							$photo=$data['photo'];
+							$cycle=$data['cycle'];
+							$matiere=$data['matiere'];
+											
+							
+				?>
+                    <!-- .col -->
+                    <div class="col-md-6 col-lg-6 col-xlg-4">
+                        <div class="card card-body">
+                            <div class="row">
+                                <div class="col-md-4 col-lg-3 text-center">
+                                    <img src="../assets/images/photo/<?php echo $photo; ?>" alt="user" class="img-circle img-responsive">
                                 </div>
-                                <!-- /.left-aside-column-->
-                                <div class="right-aside ">
-                                    
-									<div class="card">
-                            <div class="card-body">
-                                 <div class="table-responsive m-t-40">
-                                    <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
-                                        <thead>
-                                            <tr>
-                                                <th>ID </th>
-                                                <th>Nom Prénom</th>
-                                                <th>Genre</th>
-                                                <th>Adresse</th>
-                                                <th>Classe</th>
-                                                <th>Statut</th>
-                                                <th class="text-nowrap">Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tfoot>
-                                            <tr>
-                                                <th>ID </th>
-                                                <th>Nom Prénom</th>
-                                                <th>Genre</th>
-                                                <th>Adresse</th>
-                                                <th>Classe</th>
-												<th>Statut</th>
-                                                <th class="text-nowrap">Action</th>
-                                            </tr>
-                                        </tfoot>
-                                        <tbody>
-										<?php 
-											while ( $data = mysql_fetch_assoc($cmd_etuds) )
-											{
-											$id_etudiant=$data['id_etudiant'];
-											$matricule=$data['matricule'];
-											$nom=$data['nom'].' '.$data['prenom'];
-											$photo=$data['photo'];											
-											$adresse=$data['adresse'];
-											$genre=$data['genre'];
-											$classe=$data['classe'];
-											
-											
-											
-											
-										?>
-                                            <tr>
-												<td><?php echo $id_etudiant; ?></td>
-                                                <td> <a href="profil-etudiant.php?id=<?php echo $id_etudiant; ?>"><img  style='width :25px;' src="../assets/images/photo/<?php echo $photo; ?>" alt="user" class="img-circle" /> <?php echo $nom; ?></a></td>                                               
-                                                <td><?php echo $genre; ?></td>
-                                                <td><?php echo $adresse; ?></td>
-                                                <td><?php echo $classe; ?></td>
-                                                <td>active</td>
-                                                 <td class="text-nowrap">
-                                                    <a href="modifier-etudiant.php?id=<?php echo $id_etudiant; ?>" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
-                                                    <a href="#" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>
-                                                </td>
-                                            </tr>
-                                        <?php 
-										}
-										?>	   
-                                        </tbody>
-                                    </table>
+                                <div class="col-md-8 col-lg-9">
+                                    <h3 class="box-title m-b-0"><?php echo $nom; ?></h3> <small><?php echo $matiere; ?></small>
+                                    <address>
+                                        <b>Genre:</b>  <?php echo $genre; ?>
+                                        <br/>    
+                                        <b>Adresse:</b>  <?php echo $adresse; ?>
+                                        <br/>                                        
+                                        <b>Tel:</b>  <?php echo $tel; ?>
+                                        <br/>                                        
+                                        <b>Email:</b>  <?php echo $email; ?>
+										
+										
+                                    </address>
+									<a href="ajouter-prof.php"class="btn btn-success text-white">Modifier </a>
+									<a href="ajouter-prof.php"class="btn btn-danger text-white">Supprimer </a>
                                 </div>
-                            </div>
-                        </div>
-                                    <!-- .left-aside-column-->
-                                </div>
-                                <!-- /.left-right-aside-column-->
                             </div>
                         </div>
                     </div>
+                    <!-- /.col -->
+				<?php 
+				}
+				?>		
+                    <!-- .col -->
+                    
+                    <!-- /.col -->
                 </div>
+                <!-- /.row -->
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->
@@ -565,6 +517,7 @@ $cmd_etuds=mysql_query($req_etus);
     <script src="../assets/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="../assets/plugins/bootstrap/js/popper.min.js"></script>
+
     <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
     <script src="js/jquery.slimscroll.js"></script>
@@ -577,70 +530,6 @@ $cmd_etuds=mysql_query($req_etus);
     <script src="../assets/plugins/sparkline/jquery.sparkline.min.js"></script>
     <!--Custom JavaScript -->
     <script src="js/custom.min.js"></script>
-    <!-- Footable -->
-    <script src="../assets/plugins/footable/js/footable.all.min.js"></script>
-    <script src="../assets/plugins/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
-    <!--FooTable init-->
-    <script src="js/footable-init.js"></script>
-	
-    <!-- This is data table -->
-    <script src="../assets/plugins/datatables/jquery.dataTables.min.js"></script>
-	   <!-- start - This is for export functionality only -->
-    <script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
-    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
-    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
-    <!-- end - This is for export functionality only -->
-	<script>
-    $(document).ready(function() {
-        $('#myTable').DataTable();
-        $(document).ready(function() {
-            var table = $('#example').DataTable({
-                "columnDefs": [{
-                    "visible": false,
-                    "targets": 2
-                }],
-                "order": [
-                    [2, 'asc']
-                ],
-                "displayLength": 25,
-                "drawCallback": function(settings) {
-                    var api = this.api();
-                    var rows = api.rows({
-                        page: 'current'
-                    }).nodes();
-                    var last = null;
-                    api.column(2, {
-                        page: 'current'
-                    }).data().each(function(group, i) {
-                        if (last !== group) {
-                            $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
-                            last = group;
-                        }
-                    });
-                }
-            });
-            // Order by the grouping
-            $('#example tbody').on('click', 'tr.group', function() {
-                var currentOrder = table.order()[0];
-                if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
-                    table.order([2, 'desc']).draw();
-                } else {
-                    table.order([2, 'asc']).draw();
-                }
-            });
-        });
-    });
-    $('#example23').DataTable({
-        dom: 'Bfrtip',
-        buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
-        ]
-    });
-    </script>
     <!-- ============================================================== -->
     <!-- Style switcher -->
     <!-- ============================================================== -->

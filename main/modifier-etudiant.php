@@ -1,4 +1,37 @@
 <!DOCTYPE html>
+<?php
+
+include_once("includes/connexion.php");
+
+$id=$_GET['id'];
+
+$req_etu="SELECT * FROM `etudiant` where id_etudiant='$id'  ";
+$cmd_etud=mysql_query($req_etu);
+
+$data = mysql_fetch_assoc($cmd_etud);	
+
+$nom=$data['nom'];
+$prenom=$data['prenom'];
+$genre=$data['genre'];
+$adresse=$data['adresse'];
+$tel=$data['tel'];
+$email=$data['email'];
+$date_naissance=$data['date_naissance'];
+$photo=$data['photo'];
+$classe=$data['classe'];
+$session=$data['session'];
+$nom_tuteur=$data['nom_tuteur'];
+$prenom_tuteur=$data['prenom_tuteur'];
+$genre_tuteur=$data['genre_tuteur'];
+$adresse_tuteur=$data['adresse_tuteur'];
+$tel_tuteur1=$data['tel_tuteur1'];
+$tel_tuteur2=$data['tel_tuteur2'];
+$email_tuteur=$data['email_tuteur'];
+$profession=$data['profession'];
+
+
+
+?>
 <html lang="en">
 
 <head>
@@ -10,7 +43,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
-    <title>Admin Press Admin Template - The Ultimate Bootstrap 4 Admin Template</title>
+    <title>LightSchool</title>
     <!-- Bootstrap Core CSS -->
     <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/plugins/wizard/steps.css" rel="stylesheet">
@@ -355,13 +388,13 @@
             <!-- ============================================================== -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-themecolor">Ajouter Etudiants/Elèves </h3>
+                    <h3 class="text-themecolor">Modifier Etudiants/Elèves </h3>
                 </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="gestion-etudiants.php">Gestion des comptes</a></li>
                         <li class="breadcrumb-item"><a href="gestion-etudiants.php">Etudiants/Elèves</a></li>
-                        <li class="breadcrumb-item active">Ajouter Etudiants/Elèves</li>
+                        <li class="breadcrumb-item active">Modifier Etudiants/Elèves</li>
                     </ol>
                 </div>
                 <div class="">
@@ -385,7 +418,8 @@
                         <div class="card wizard-content">
                             <div class="card-body">
                                 <h4 class="card-title">Formulaire Etudiants/Elèves</h4>                                
-                                <form action="actions/ajouter-etudiant.php" method="POST" enctype="multipart/form-data" class="validation-wizard wizard-circle">
+                                <form action="actions/modifier-etudiant.php" method="POST" enctype="multipart/form-data" class="validation-wizard wizard-circle">
+								<input type="hidden" class="form-control required" value='<?php echo $id; ?>' name="id"> 
                                     <!-- Step 1 -->
                                     <h6>Informations Personnelles</h6>
                                     <section>
@@ -393,12 +427,12 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label> Nom : <span class="danger">*</span> </label>
-                                                    <input type="text" class="form-control required"  name="nom"> </div>
+                                                    <input type="text" class="form-control required" value='<?php echo $nom; ?>' name="nom"> </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="wlastName2"> Prénom : <span class="danger">*</span> </label>
-                                                    <input type="text" class="form-control required" id="wlastName2" name="prenom"> </div>
+                                                    <input type="text" class="form-control required" value='<?php echo $prenom; ?>' id="wlastName2" name="prenom"> </div>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -406,7 +440,7 @@
                                                 <div class="form-group">
                                                   <label> Genre : <span class="danger">*</span> </label>
                                                     <select class="custom-select form-control required" name="genre">
-                                                        <option value="">Genre</option>
+                                                        <option value="<?php echo $genre; ?>"><?php echo $genre; ?></option>
                                                         <option value="Male">Male</option>
                                                         <option value="Female">Female</option>
                                                     </select>
@@ -416,7 +450,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label> Adresse : <span class="danger">*</span> </label>
-                                                    <input type="text" class="form-control required" name="adresse"> </div>
+                                                    <input type="text" class="form-control" value='<?php echo $adresse; ?>' required" name="adresse"> </div>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -424,7 +458,7 @@
                                                 
 										<div class="form-group">
                                         <label>Téléphone :</label>
-                                        <input type="text" placeholder="" data-mask="(+212)9 9999-9999" class="form-control" name='tel'>
+                                        <input type="text" placeholder="" data-mask="(+212)9 9999-9999" value='<?php echo $tel; ?>' class="form-control" name='tel'>
                                         <span class="font-13 text-muted">(+212)9 9999-9999</span> </div>
 										
                                             </div>
@@ -432,7 +466,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="wemailAddress2"> Email :  </label>
-                                                    <input type="email" class="form-control " id="wemailAddress2" name="email"> </div>
+                                                    <input type="email" class="form-control " value='<?php echo $email; ?>' id="wemailAddress2" name="email"> </div>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -440,7 +474,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="wdate2">Date Naissance :<span class="danger">*</span> </label>
-                                                     <input type="text" placeholder="" data-mask="99/99/9999" class="form-control required" name="date_naissance">
+                                                     <input type="text" placeholder="" value='<?php echo $date_naissance; ?>' data-mask="99/99/9999" class="form-control required" name="date_naissance">
 													<span class="font-13 text-muted ">jj/mm/aaaa</span> </div>
                                             </div>
 										</div>
@@ -451,7 +485,7 @@
 													<div style='width: 260px !important;' class="card-body">
 													<label for="wdate2">Photo :</label>	
 														
-														<input type="file" id="input-file-now" class="dropify" name='photo2' />
+														<input type="file" id="input-file-now" data-default-file="../assets/images/photo/<?php echo $photo; ?>"  value='../assets/images/photo/<?php echo $photo; ?>' class="dropify" name='photo2' />
 													</div>
 
 												</div>
@@ -467,7 +501,7 @@
                                                     
 													<label>Classe :<span class="danger">*</span></label>
 														<select class="select2 form-control custom-select required" name='classe' style="width: 100%; height:36px;">
-															<option value="">Classe</option>
+															<option value="<?php echo $classe; ?>"><?php echo $classe; ?></option>
 															<optgroup label="Cycle">
 															<optgroup label="Niveau 1">
 																<option value="Classe1">Classe1</option>
@@ -492,7 +526,7 @@
 									<label>Année Scolaire :<span class="danger">*</span></label>
                                     <select class="select2 custom-select form-control required" style="width: 100%; height:36px;"  name="session">
 										
-										<option value="">Année Scolaire</option>										
+										<option value="<?php echo $genre; ?>"><?php echo $session; ?></option>									
 										<option value="2016-2017">2016-2017</option>
 										<option value="2017-2018">2017-2018</option>
 
@@ -513,12 +547,12 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label> Nom du tuteur : <span class="danger">*</span> </label>
-                                                    <input type="text" class="form-control required"  name="nom_tuteur"> </div>
+                                                    <input type="text" class="form-control required" value="<?php echo $nom_tuteur; ?>"  name="nom_tuteur"> </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label> Prénom du tuteur : <span class="danger">*</span> </label>
-                                                    <input type="text" class="form-control required"  name="prenom_tuteur"> </div>
+                                                    <input type="text" class="form-control required" value="<?php echo $prenom_tuteur; ?>" name="prenom_tuteur"> </div>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -526,7 +560,7 @@
                                                 <div class="form-group">
                                                   <label> Genre du tuteur : <span class="danger">*</span> </label>
                                                     <select class="custom-select form-control required"  name="genre_tuteur">
-                                                        <option value="">Genre</option>
+                                                        <option value="<?php echo $genre_tuteur; ?>"><?php echo $genre_tuteur; ?></option>
                                                         <option value="Male">Male</option>
                                                         <option value="Female">Female</option>
                                                     </select>
@@ -536,7 +570,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="wlastName2"> Adresse du tuteur : <span class="danger">*</span> </label>
-                                                    <input type="text" class="form-control required" name="adresse_tuteur"> </div>
+                                                    <input type="text" class="form-control required" value="<?php echo $adresse_tuteur; ?>" name="adresse_tuteur"> </div>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -544,7 +578,7 @@
                                                 
 										<div class="form-group">
                                         <label>Téléphone 1 : <span class="danger">*</span></label>
-                                        <input type="text" placeholder="" data-mask="(+212)9 9999-9999" class="form-control required" name="tel_tuteur1">
+                                        <input type="text" placeholder="" data-mask="(+212)9 9999-9999" value="<?php echo $tel_tuteur1; ?>" class="form-control required" name="tel_tuteur1">
                                         <span class="font-13 text-muted">(+212)9 9999-9999</span> </div>
 										
                                             </div>
@@ -552,7 +586,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                         <label>Téléphone 2 :</label>
-                                        <input type="text" placeholder="" data-mask="(+212)9 9999-9999" class="form-control" name="tel_tuteur2">
+                                        <input type="text" placeholder="" data-mask="(+212)9 9999-9999" value="<?php echo $tel_tuteur2; ?>" class="form-control" name="tel_tuteur2">
                                         <span class="font-13 text-muted">(+212)9 9999-9999</span> </div>
                                             </div>
                                         </div>
@@ -563,13 +597,13 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label> Email :  </label>
-                                                    <input type="email" class="form-control "  name="email_tuteur"> </div>
+                                                    <input type="email" class="form-control " value="<?php echo $email_tuteur; ?>"  name="email_tuteur"> </div>
                                             </div>
 											
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label> Profession du tuteur : <span class="danger">*</span> </label>
-                                                    <input type="text" class="form-control required"  name="profession"> </div>
+                                                    <input type="text" class="form-control required" value="<?php echo $profession; ?>"  name="profession"> </div>
                                             </div>
 											
 											
