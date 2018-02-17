@@ -11278,7 +11278,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sPrevious": "Previous"
+				"sPrevious": "Précédent"
 			},
 	
 			/**

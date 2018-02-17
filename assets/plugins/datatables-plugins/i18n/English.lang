@@ -20,8 +20,8 @@
 	"oPaginate": {
 		"sFirst":    "First",
 		"sLast":     "Last",
-		"sNext":     "Next",
-		"sPrevious": "Previous"
+		"sNext":     "Suivant",
+		"sPrevious": "Précédent"
 	},
 	"oAria": {
 		"sSortAscending":  ": activate to sort column ascending",
